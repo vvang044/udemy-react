@@ -2,43 +2,53 @@ import React, {useState} from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-    // const [enteredTitle, setEnteredTitle] = useState('')
-    // const [enteredAmount, setEnteredAmount] = useState('')
-    // const [enteredDate, setEnteredDate]= useState('');
-    //alternative way of writing state isntead of 3 you can write 1
+    const [enteredTitle, setEnteredTitle] = useState('')
+    const [enteredAmount, setEnteredAmount] = useState('')
+    const [enteredDate, setEnteredDate]= useState('');
 
-     const [userInput, setUserInput]= useState({
-        enteredTitle:'',
-        enteredAmount: '',
-        enteredDate: ''
-    })
+    //alternative way of writing state isntead of 3 you can write 1
+    //  const [userInput, setUserInput]= useState({
+    //     enteredTitle:'',
+    //     enteredAmount: '',
+    //     enteredDate: ''
+    // })
+
     const titleChangeHandler = (event) =>{
-        // setEnteredTitle(event.target.value);
-        //alternative way of writing state
-        setUserInput({
-            ...userInput,
-            enteredTitle: event.target.value,
-        })
+        //1st alternative way of writing state
+        setEnteredTitle(event.target.value);
+
+        //2nd alternative way of writing state
+        // setUserInput({
+        //     ...userInput,
+        //     enteredTitle: event.target.value,
+        // })
+
+        //3rd alternative way of writing state
+        // setUserInput((prevState){
+        //     return{...prevState, enteredTitle:event.target.value}
+        // })
+        
     }
 
     const amountChangeHandler = (event) =>{
-        // setEnteredAmount(event.target.value)
-        //alternative way of writing state
+        setEnteredAmount(event.target.value)
 
-        setUserInput({
-            ...userInput,
-            enteredAmount: event.target.value,
-        })
+
+        //alternative way of writing state
+        // setUserInput({
+        //     ...userInput,
+        //     enteredAmount: event.target.value,
+        // })
     }
 
     const dateChangeHandler = (event) => {
-        // setEnteredDate(event.target.value)
-        //alternative way of writing state
+        setEnteredDate(event.target.value)
 
-        setUserInput({
-            ...userInput,
-            enteredDate: event.target.value,
-        })
+        //alternative way of writing state
+        // setUserInput({
+        //     ...userInput,
+        //     enteredDate: event.target.value,
+        // })
     }
 
     return <form>
