@@ -26,11 +26,16 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = expense => {
+    console.log("I'm in App.js");
+    console.log(expense);
+  }
+
   return (
     <div>
       {/* <h2>My first react app</h2> */}
 
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses}></Expenses>
       {/* <ExpenseItem 
       title={expenses[0].title} 
