@@ -36,7 +36,7 @@ function App() {
       {/* <h2>My first react app</h2> */}
 
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses}></Expenses>
+      <Expenses item={expenses}></Expenses>
       {/* <ExpenseItem 
       title={expenses[0].title} 
       amount={expenses[0].amount} 
