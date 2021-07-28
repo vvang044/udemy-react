@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 
 import Card from '../UI/Card';
 import ExpenseFilter from './ExpenseFilter';
-import ExpenseItem from './ExpenseItem';
-
+// import ExpenseItem from './ExpenseItem';
+import ExpensesList from './ExpensesList';
 import './Expenses.css';
+
 // const Expenses = (props) => {}
 function Expenses(props){
  const [filteredYear, setFilteredYear] = useState('2020');
@@ -20,18 +21,19 @@ function Expenses(props){
 
   })
    
-  let expensesContent = <p>No Expenses found.</p>;
+  //got moved to ExpensesList.js component for lean code
+  // let expensesContent = <p>No Expenses found.</p>;
 
-        if(filteredExpenses.length > 0){
-          expensesContent = filteredExpenses.map((expense) => (
-            <ExpenseItem
-              key={expense.id}
-              title={expense.title}
-              amount={expense.amount}
-              date={expense.date}
-            />
-          ))
-        }
+  //       if(filteredExpenses.length > 0){
+  //         expensesContent = filteredExpenses.map((expense) => (
+  //           <ExpenseItem
+  //             key={expense.id}
+  //             title={expense.title}
+  //             amount={expense.amount}
+  //             date={expense.date}
+  //           />
+  //         ))
+  //       }
 
 
     return(
@@ -43,7 +45,8 @@ function Expenses(props){
         onChangeFilter={filterChangeHanlder}
         />
         
-        {expensesContent}
+        {/* {expensesContent} */}
+        <ExpensesList items={filteredExpenses}/>
 
        {/* Another way of writing this see above */}
         {/* {filteredExpenses === 0 && <p>No Expenses found.</p>}
